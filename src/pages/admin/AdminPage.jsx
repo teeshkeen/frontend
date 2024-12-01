@@ -90,16 +90,16 @@ const AdminPage = () => {
   };
 
   const handleDeleteCategory = async (id) => {
+  if (window.confirm('Вы уверены, что хотите удалить эту категорию?')) {
     try {
-      if (window.confirm('Вы уверены, что хотите удалить эту категорию и все связанные с ней товары?')) {
-        await categoryAPI.deleteCategory(id);
-        loadCategories(); // Перезагрузка списка категорий
-      }
+      await categoryAPI.deleteCategory(id);
+      loadCategories(); // Перезагрузка списка категорий
     } catch (error) {
-      console.error('Error deleting category:', error);
-      alert('Ошибка при удалении категории');
+      console.error('Error deleting category:', error.response?.data || error);
+      alert('Ошибка при удалении категории: ' + (error.response?.data?.message || error.message));
     }
-  };
+  }
+};
 
   const handleOpenProductModal = async (categoryId) => {
     try {
