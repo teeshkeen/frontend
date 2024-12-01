@@ -1,7 +1,11 @@
 // frontend/src/shared/services/api.js
 import axios from 'axios';
 
+<<<<<<< HEAD
 const API_URL = process.env.REACT_APP_API_URL || 'https://uralplata-beta.com/api';
+=======
+const API_URL = process.env.REACT_APP_API_URL || 'http://79.174.80.133:5001/api';
+>>>>>>> 9d1322fe7afd65ac7bf5c790ea2e61450ff6093c
 
 const api = axios.create({
   baseURL: API_URL,
