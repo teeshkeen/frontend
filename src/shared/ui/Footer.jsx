@@ -49,7 +49,7 @@ const Footer = () => {
                 <div className="text-center">
                     <div className="font-gilroyLight text-base 768:text-lg">Copyright © 2019 - <span>{today.getFullYear()}</span></div>
                     <div className="text-lg 768:text-xl">УралПлата</div>
-                    <div className="text-sm text-white hover:text-gray-400 active:text-gray-600"><a href="https://t.me/teeshkeen">Сайт разработан  — teeshkeen</a></div>
+                    <div className="text-xs font-gilroyLight text-white hover:text-gray-400 active:text-gray-600"><a href="https://t.me/teeshkeen">Сайт разработан  — teeshkeen</a></div>
                 </div>
             </div>
         </div>

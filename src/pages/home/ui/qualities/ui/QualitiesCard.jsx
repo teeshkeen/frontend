@@ -29,7 +29,7 @@ const QualitiesCard = ({title = "Random", desc = "Lorem epsilum xyepsilvLorem ep
         })()
       }
         <span className='text-[18px] 768:text-[20px]'>{title}</span>
-        <p className='leading-5 text-[16px] max-w-[272px] 768:text-[18px] 768:max-w-[340px]'>{desc}</p>
+        <p className='leading-5 font-gilroyLight text-[16px] max-w-[272px] 768:text-[18px] 768:max-w-[340px]'>{desc}</p>
     </div>
   )
 }

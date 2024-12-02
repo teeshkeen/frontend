@@ -1,7 +1,7 @@
 // frontend/src/shared/services/api.js
 import axios from 'axios';
 
-const API_URL = process.env.REACT_APP_API_URL || 'https://uralplata-beta.com/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -64,6 +64,14 @@ export const productAPI = {
   
   updateProduct: (id, data) => 
     api.put(`/products/${id}`, data),
+
+  // Новый метод для обновления нескольких продуктов
+  updateProducts: async (products) => {
+    const promises = products.map(product => 
+      api.put(`/products/${product.id}`, product)
+    );
+    return Promise.all(promises);
+  },
   
   deleteProduct: async (id) => {
     try {
